@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hệ thống phân tích đánh giá quán ăn, nhà hàng</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='icon.jpg')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">Hệ thống phân tích đánh giá quán ăn, nhà hàng</a>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Sentiment analysis</h1>
+        <p class="lead">sentiment analysis model using naive bayes</p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <form action="/predict" method="POST">
+        <p class="lead">Kiểm thử model</p>
+        <textarea class='message-box', name='review' rows="10" cols="80" placeholder="Nhập vào đánh giá"></textarea>
+        <div class="text-center">
+          <input class="btn btn-primary" type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+    
+    <!-- <div class="container">
+      <h1>Chọn tệp chứa danh sách bình luận:</h1>
+      <form action="/multipredict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".txt">
+        <br>
+        <input type="submit" value="Dự đoán cảm xúc từ tệp">
+      </form>
+    </div> -->
+    
+    <div class="container">
+      <h1>Nhập đường dẫn để lấy bình luận:</h1>
+      <form action="/get_comments" method="post">
+        <label for="url_input">Nhập đường dẫn:</label>
+        <input type="text" id="url_input" name="url" size="50">
+        <input type="submit" value="Lấy bình luận và phân tích">
+      </form>
+    </div>
+  </body>
+</html>

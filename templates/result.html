@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Hệ thống phân tích đánh giá quán ăn, nhà hàng</title>
+  <link rel="shortcut icon" href="{{url_for('static', filename='icon.jpg')}}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">Hệ thống phân tích đánh giá quán ăn, nhà hàng</a>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Sentiment Analysis</h1>
+      <p class="lead">Sentiment analysis models using Naive Bayes, Logistic Regression, and LSTM</p>
+    </div>
+  </div>
+
+  <h1>Kết quả dự đoán:</h1>
+
+  <p><strong>Bình luận của bạn:</strong> {{ user_comment }}</p>
+  <ul>
+    <li><strong>Naive Bayes:</strong> {{ prediction_nb }}</li>
+    <li><strong>Logistic Regression:</strong> {{ prediction_logr }}</li>
+    <li><strong>LSTM:</strong> {{ prediction_lstm }}</li>
+  </ul>
+
+  <br>
+
+  <div class="card text-center">
+    <div class="card-footer text-muted">
+      Thanks for visiting the site. Hope you had a good time!
+    </div>
+  </div>
+</body>
+</html>

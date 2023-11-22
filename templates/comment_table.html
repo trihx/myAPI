@@ -1,0 +1,9 @@
+<!-- comment_table.html -->
+{% for comment in comments %}
+<tr>
+  <td>{{ comment.review[:150] }}{% if comment.review|length > 150 %}...{% endif %}</td>
+  <td>{{ comment.predicted_sentiment }}</td>
+  <td>{{ comment.logr_sentiment }}</td>
+  <td>{{ comment.lstm_sentiment }}</td>
+</tr>
+{% endfor %}
